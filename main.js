@@ -1,6 +1,6 @@
 // Check if EmailJS is loaded before initializing
 if (typeof emailjs !== 'undefined') {
-    emailjs.init("t476DxMCZVALgK75l"); // Replace with your actual Public Key
+    emailjs.init("mbP0jJF8qg58OS64U"); // Replace with your actual Public Key
 } else {
     console.error("EmailJS library not loaded. Please check the script URL or network connection.");
 }
