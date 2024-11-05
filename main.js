@@ -46,7 +46,7 @@ function handleButtonClick() {
         console.log("User email: " + userEmail);
 
         // Send email using EmailJS
-        emailjs.send("", "", {
+        emailjs.send("service_zsz2r4d", "template_20zsq32", {
             user_email: userEmail,
             button_text: buttonText,
             user_input: userInput
