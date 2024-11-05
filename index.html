@@ -1,19 +1,39 @@
 <!DOCTYPE HTML>
-<!--Link with index.js and style.css file-->
-<link rel="stylesheet" href="style.css">
-
 <html>
 <head>
-    <title>Em co mun di an hongg emiu?❤️ </title>
-</head> 
+    <title>Em co mun di an hongg emiu?❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === 'hidden') {
+                document.title = "Quay lai iii maaa!";
+            } else {
+                document.title = "Em co mun di an hongg";
+            }
+        });
+    </script>
+    <!-- Load EmailJS SDK -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "",
+      });
+   })();
+</script>
+
+</head>
 <body>
     <h1>Em co mun di an hongg? ❤️</h1>
     <br>
     <div>
         <button id="co">Co</button>
         <button id="chac_chan">Chac Chan Rui</button>
-        <button id ="ko">Hamm</button>
+        <button id="ko">Hamm</button>
     </div>
+    <!-- Load main.js last to ensure emailjs is defined -->
     <script src="main.js"></script>
 </body>
 </html>
