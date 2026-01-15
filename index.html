@@ -12,28 +12,87 @@
             }
         });
     </script>
-    <!-- Load EmailJS SDK -->
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "mbP0jJF8qg58OS64U",
-      });
-   })();
-</script>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "mbP0jJF8qg58OS64U",
+          });
+       })();
+    </script>
 </head>
 <body>
-    <h1>Em co mun di an hongg? ❤️</h1>
-    <br>
-    <div>
-        <button id="co">Co</button>
-        <button id="chac_chan">Chac Chan Rui</button>
-        <button id="ko">Hamm</button>
+    <!-- Step 1: Câu hỏi chính -->
+    <div id="step1" class="step active">
+        <h1>Em co mun di an hongg? ❤️</h1>
+        <br>
+        <div>
+            <button id="co" class="yes-btn">Co</button>
+            <button id="chac_chan" class="yes-btn">Chac Chan Rui</button>
+            <button id="ko">Hamm</button>
+        </div>
     </div>
-    <!-- Load main.js last to ensure emailjs is defined -->
+
+    <!-- Step 2: Hỏi ý tưởng -->
+    <div id="step2" class="step">
+        <h1>Tuyệt vời! Em có ý tưởng chưa? 💭</h1>
+        <div>
+            <button id="co_y_tuong" class="yes-btn">Có</button>
+            <button id="khong_y_tuong" class="yes-btn">Hong</button>
+        </div>
+    </div>
+
+    <!-- Step 3a: Nhập địa chỉ cụ thể -->
+    <div id="step3a" class="step">
+        <h1>Em muốn đi ăn ở đâu? 📍</h1>
+        <div class="form-container">
+            <input type="text" id="dia_chi_cu_the" placeholder="Nhập địa chỉ cụ thể anh đến nha..." />
+            <button id="xac_nhan_dia_chi" class="yes-btn">Xác nhận</button>
+        </div>
+    </div>
+
+    <!-- Step 3b: Chọn quán -->
+    <div id="step3b" class="step">
+        <h1>Anh gợi ý mấy quán này nha! 🍽️</h1>
+        <div class="restaurant-grid">
+            <div class="restaurant-card" data-name="Quán Cơm Tấm Sài Gòn" data-address="123 Nguyễn Huệ, Q1, TP.HCM">
+                <img src="https://via.placeholder.com/200x150/ff69b4/ffffff?text=Cơm+Tấm" alt="Cơm Tấm">
+                <h3>Quán Cơm Tấm Sài Gòn</h3>
+                <p>123 Nguyễn Huệ, Q1, TP.HCM</p>
+            </div>
+            <div class="restaurant-card" data-name="Phở Hà Nội" data-address="456 Lê Lợi, Q1, TP.HCM">
+                <img src="https://via.placeholder.com/200x150/40c057/ffffff?text=Phở+Hà+Nội" alt="Phở">
+                <h3>Phở Hà Nội</h3>
+                <p>456 Lê Lợi, Q1, TP.HCM</p>
+            </div>
+            <div class="restaurant-card" data-name="Lẩu Thái Tomyum" data-address="789 Trần Hưng Đạo, Q1, TP.HCM">
+                <img src="https://via.placeholder.com/200x150/ff6b6b/ffffff?text=Lẩu+Thái" alt="Lẩu">
+                <h3>Lẩu Thái Tomyum</h3>
+                <p>789 Trần Hưng Đạo, Q1, TP.HCM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 4: Nhập email -->
+    <div id="step4" class="step">
+        <h1>Cuối cùng nhập email để anh gửi thông tin nha! 💌</h1>
+        <div class="form-container">
+            <div class="selected-info">
+                <h3>Thông tin đã chọn:</h3>
+                <p id="selected_location">...</p>
+            </div>
+            <input type="email" id="user_email" placeholder="Nhập email của em..." />
+            <button id="gui_email" class="yes-btn">Gửi Email 💕</button>
+        </div>
+    </div>
+
+    <!-- Step 5: Thành công -->
+    <div id="step5" class="step">
+        <h1>Email đã gửi thành công! 🎉</h1>
+        <p>Anh sẽ liên hệ với em sớm nhất có thể! 💖</p>
+        <button id="bat_dau_lai" class="yes-btn">Bắt đầu lại</button>
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>
